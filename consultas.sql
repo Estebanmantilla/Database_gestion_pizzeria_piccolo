@@ -6,7 +6,7 @@ select p.nombre, count(pp.id_pizza) as total_vendidas from pizza p left join piz
 
 
 -- 3 Pedidos por repartidor (JOIN).
-select r.nombre as repartidor, count(d.id_pedido) AS total_pedidos from repartidor r left join domicilio d on r.id = d.id_repartidor group by r.id, r.nombre order by total_pedidos desc; 
+select p.nombre as repartidor, count(d.id_pedido) AS total_pedidos from persona p left join repartidor on r.id = p.id =left join domicilio d on r.id = d.id_repartidor group by r.id, r.nombre order by total_pedidos desc; 
 
 
 -- 4 Promedio de entrega por zona (AVG y JOIN).
