@@ -215,3 +215,7 @@ create table auditoria (
 
 ALTER TABLE ingrediente
 ADD COLUMN minimo INT NOT NULL DEFAULT 5;
+
+
+ALTER TABLE pizza_pedido
+ADD COLUMN cantidad INT DEFAULT 1;
