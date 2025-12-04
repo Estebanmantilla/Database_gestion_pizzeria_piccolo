@@ -32,7 +32,7 @@ declare ganancia double default 0;
 
 select sum(valor_venta) into ganacia_diaria from domicilio d left join pedido p on d.id_pedido = p.id where date(p.fecha) = fecha_dia;
 
-select sum(i.costo) into valor_ingredientes from pedido p left join pizza_pedido pp on p.id = pp.id_pedido left join pizza_ingrediente pi on pp.id_pizza = pi.id_pizza left join ingrediente i on pi.id_ingrediente = i.id where date(p.fecha) = fecha_dia;
+select sum(i.costo) into valor_ingredientes from pedido p left join pizza_pedido pp on p.id = pp.id_pedido left join pizza_ingre pi on pp.id_pizza = pi.id_pizza left join ingrediente i on pi.id_ingrediente = i.id where date(p.fecha) = fecha_dia;
 
 set ganancia = ganacia_diaria - valor_ingredientes;
 
