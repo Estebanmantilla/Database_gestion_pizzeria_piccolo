@@ -15,7 +15,7 @@ select d.zona, avg(timestampdiff(minute, p.hora_salida, p.hora_entrega)) as prom
 
 -- 5 Clientes que gastaron más de un monto (HAVING).
 
-select c.id,pe.nombre, sum(d.valor_venta) as total_gastado from persona pe left join cliente c on c.id = p.id left join pedido p on p.id_cliente = c.id left join domicilio d on d.id_pedido = p.id group by c.id, pe.nombre having total_gastado > 50000; 
+select c.id,pe.nombre, sum(d.valor_venta) as total_gastado from persona pe left join cliente c on c.id = pe.id left join pedido p on p.id_cliente = c.id left join domicilio d on d.id_pedido = p.id group by c.id, pe.nombre having total_gastado > 50000; 
 
 -- 6 Búsqueda por coincidencia parcial de nombre de pizza (LIKE).
 select * from pizza where nombre like '%pep%';
